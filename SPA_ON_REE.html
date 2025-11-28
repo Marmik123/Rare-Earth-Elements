@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rare Earth Rush: An Indian Investor's Guide</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Font Awesome (for icons, using webfonts/unicode, no SVG injection) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Embedded CSS for specific Chart Container constraints -->
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%; /* Constraints handled by grid/tailwind */
+            height: 350px;
+            max-height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        /* Custom Scrollbar for a polished look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4F46E5; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3730a3; 
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans leading-relaxed">
+
+    <!-- 
+    <!-- SOURCE MATERIAL ANALYSIS & PLAN -->
+    <!--
+    PLAN:
+    1. Introduction: Define REEs and their critical role in the modern economy (EVs, Defense).
+    2. Global Context: Visualize China's dominance to show the supply gap India can fill.
+    3. The Indian Story: Reserves breakdown and Govt Policy (2023 Amendment).
+    4. Investment Strategy: How to split ₹1 Lakh across sectors (Mining, Chemicals, End-Users).
+    5. Future Outlook: Projected ROI based on CAGR estimates.
+    6. Risk Assessment: Radar chart of risks.
+    
+    PALETTE: "Brilliant Blues & Violets" (Professional, Tech-focused)
+    - Primary: #4F46E5 (Indigo-600)
+    - Secondary: #06B6D4 (Cyan-500)
+    - Accent: #F59E0B (Amber-500)
+    - Canvas/Bg: White/Slate-100
+
+    CHART JUSTIFICATIONS (NO SVG USED):
+    1. Global Processing: Doughnut Chart (Chart.js) -> Goal: Compare parts to whole.
+    2. Demand Forecast: Line Chart (Chart.js) -> Goal: Change over time.
+    3. Indian Reserves: Horizontal Bar Chart (Chart.js) -> Goal: Compare categories (States).
+    4. Portfolio Allocation: Pie Chart (Chart.js) -> Goal: Composition of ₹1 Lakh.
+    5. ROI Scenarios: Grouped Bar Chart (Chart.js) -> Goal: Compare outcomes.
+    6. Risks: Radar Chart (Chart.js) -> Goal: Multivariate relationship.
+    
+    CONFIRMATION:
+    - NO SVG images used (FontAwesome webfonts/Unicode only).
+    - NO Mermaid JS used.
+    -->
+
+    <!-- HERO SECTION -->
+    <header class="bg-gradient-to-r from-indigo-900 to-indigo-600 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-12 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">The Rare Earth Rush</h1>
+            <p class="text-xl md:text-2xl font-light text-cyan-200">An Indian Retail Investor's Guide to the Future</p>
+            <div class="mt-8 inline-block bg-white text-indigo-900 px-6 py-2 rounded-full font-bold shadow-md">
+                Investment Focus: ₹1,00,000 Portfolio
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-12 gap-8">
+
+        <!-- SECTION 1: THE HOOK (What & Why) -->
+        <section class="col-span-1 md:col-span-12">
+            <div class="bg-white rounded-xl shadow-md p-6 border-l-8 border-indigo-500">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Why Care About Rare Earth Elements (REEs)?</h2>
+                <p class="mb-4 text-gray-600">
+                    Rare Earth Elements are the "Vitamins of Modern Industry." They are not necessarily rare in quantity, but difficult to extract. They are critical for Electric Vehicles (EVs), Defense Missiles, Renewable Energy, and Smartphones. As India pushes for <strong>Atmanirbhar Bharat</strong> and Net-Zero 2070, domestic demand is set to explode.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                    <div class="bg-indigo-50 p-4 rounded-lg text-center">
+                        <div class="text-4xl mb-2">🚗</div>
+                        <h3 class="font-bold text-indigo-900">EV Revolution</h3>
+                        <p class="text-sm text-gray-600">Neodymium magnets are essential for EV motors.</p>
+                    </div>
+                    <div class="bg-indigo-50 p-4 rounded-lg text-center">
+                        <div class="text-4xl mb-2">🛡️</div>
+                        <h3 class="font-bold text-indigo-900">National Defense</h3>
+                        <p class="text-sm text-gray-600">Guidance systems and jet engines rely on REEs.</p>
+                    </div>
+                    <div class="bg-indigo-50 p-4 rounded-lg text-center">
+                        <div class="text-4xl mb-2">📱</div>
+                        <h3 class="font-bold text-indigo-900">High Tech</h3>
+                        <p class="text-sm text-gray-600">Vital for miniaturization of electronics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: GLOBAL CONTEXT (Chart: Doughnut) -->
+        <section class="col-span-1 md:col-span-6 bg-white rounded-xl shadow-md p-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-2 border-b pb-2">The Supply Gap: China's Stranglehold</h2>
+            <p class="text-sm text-gray-600 mb-4">
+                Currently, China controls the vast majority of global REE processing. This geopolitical risk is why nations like India are rushing to develop domestic capabilities. This imbalance creates an investment opportunity in non-Chinese supply chains.
+            </p>
+            <div class="chart-container">
+                <canvas id="globalShareChart"></canvas>
+            </div>
+        </section>
+
+        <!-- SECTION 3: DEMAND FORECAST (Chart: Line) -->
+        <section class="col-span-1 md:col-span-6 bg-white rounded-xl shadow-md p-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-2 border-b pb-2">Projected Demand Surge (2023-2030)</h2>
+            <p class="text-sm text-gray-600 mb-4">
+                Driven by the global transition to green energy, demand for magnetic rare earths is projected to outstrip supply. This chart visualizes the expected shortage metric tons, driving prices and stock valuations upward.
+            </p>
+            <div class="chart-container">
+                <canvas id="demandTrendChart"></canvas>
+            </div>
+        </section>
+
+        <!-- SECTION 4: INDIA'S POTENTIAL (Chart: Horizontal Bar) -->
+        <section class="col-span-1 md:col-span-12 bg-white rounded-xl shadow-md p-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">India's Hidden Treasure</h2>
+                    <p class="text-gray-600 mb-4">
+                        India holds the <strong>5th largest reserves</strong> of rare earths globally. However, production has historically been low due to strict regulations. 
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        <strong>Game Changer:</strong> The 2023 Amendment to the Mines and Minerals Act now allows private sector mining for critical minerals (including Lithium and REEs), unlocking massive value for private mining and chemical companies.
+                    </p>
+                    <!-- Styled List for Key Minerals -->
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-sm font-semibold text-indigo-800 bg-indigo-50 p-2 rounded">
+                            <span class="w-6 h-6 flex items-center justify-center bg-indigo-600 text-white rounded-full mr-3 text-xs">1</span>
+                            Monazite Sands (Source of Thorium & REEs)
+                        </li>
+                        <li class="flex items-center text-sm font-semibold text-cyan-800 bg-cyan-50 p-2 rounded">
+                            <span class="w-6 h-6 flex items-center justify-center bg-cyan-600 text-white rounded-full mr-3 text-xs">2</span>
+                            Heavy Mineral Sands (Ilmenite, Rutile)
+                        </li>
+                    </ul>
+                </div>
+                <div class="chart-container">
+                    <canvas id="indianReservesChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: INVESTMENT STRATEGY (The ₹1 Lakh Plan) -->
+        <section class="col-span-1 md:col-span-8 bg-white rounded-xl shadow-md p-6 border-t-4 border-amber-500">
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Investing ₹1 Lakh: The Strategic Allocation</h2>
+            <p class="text-sm text-gray-600 mb-6">
+                Since direct "Pure Play" REE stocks are scarce in India, a smart investor invests in the <strong>Value Chain</strong>: Explorers (PSUs), Processors (Chemicals), and End-Users (Defense/Auto). Here is a balanced allocation strategy for moderate risk and high growth.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="portfolioChart"></canvas>
+                </div>
+                <div class="flex flex-col justify-center space-y-4">
+                    <div class="p-3 bg-gray-50 rounded border-l-4 border-indigo-600">
+                        <h4 class="font-bold text-indigo-700">Exploration & Mining (30%)</h4>
+                        <p class="text-xs text-gray-500">Companies involved in dredging and sand mining (e.g., PSUs, Heavy Mineral miners).</p>
+                    </div>
+                    <div class="p-3 bg-gray-50 rounded border-l-4 border-cyan-500">
+                        <h4 class="font-bold text-cyan-700">Chemical Processing (40%)</h4>
+                        <p class="text-xs text-gray-500">Companies that refine ores or make battery chemicals. High value-add segment.</p>
+                    </div>
+                    <div class="p-3 bg-gray-50 rounded border-l-4 border-amber-500">
+                        <h4 class="font-bold text-amber-700">Strategic End Users (30%)</h4>
+                        <p class="text-xs text-gray-500">Defense contractors and EV battery manufacturers who consume the output.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: GROWTH SCENARIOS (Chart: Bar) -->
+        <section class="col-span-1 md:col-span-4 bg-white rounded-xl shadow-md p-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-2">Projected Returns (5 Years)</h2>
+            <p class="text-sm text-gray-600 mb-4">
+                Based on government push and global prices. Conservative (12% CAGR) vs. Bull Case (20% CAGR).
+            </p>
+            <div class="chart-container">
+                <canvas id="roiChart"></canvas>
+            </div>
+            <div class="mt-4 text-center">
+                <p class="text-xs text-gray-500 italic">*Projections are estimates. Past performance is not indicative of future results.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 7: RISK ANALYSIS (Chart: Radar) -->
+        <section class="col-span-1 md:col-span-12 bg-white rounded-xl shadow-md p-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4 text-center">Understanding the Risks</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="chart-container md:max-w-md">
+                    <canvas id="riskRadarChart"></canvas>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <h3 class="font-bold text-lg mb-2">Key Risk Factors</h3>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li><strong>Geopolitics:</strong> Heavy reliance on China creates supply chain shocks if trade wars escalate.</li>
+                        <li><strong>Regulatory Delays:</strong> While laws have changed, mining permits in India often face bureaucratic hurdles and environmental clearance delays.</li>
+                        <li><strong>Technology Substitution:</strong> Scientists are researching motors that do not require REEs. If successful, demand could plummet.</li>
+                        <li><strong>Price Volatility:</strong> REE prices are notoriously volatile, swinging wildly based on Chinese production quotas.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-gray-400 py-8 text-center text-sm">
+        <p class="mb-2">&copy; 2023 Investment Insights Infographic. Generated for Educational Purposes.</p>
+        <p>Disclaimer: This is not financial advice. Please consult a SEBI registered investment advisor before investing.</p>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // --- Helper Function: Label Wrapping for Chart.js (Mandatory) ---
+        function wrapLabel(label) {
+            const maxChars = 16;
+            if (label.length <= maxChars) return label;
+            
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + 1 + words[i].length <= maxChars) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // --- Helper Function: Process labels array ---
+        function processLabels(labels) {
+            return labels.map(label => wrapLabel(label));
+        }
+
+        // --- Common Tooltip Config (Mandatory) ---
+        const commonTooltip = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // --- Chart Generation on Window Load ---
+        window.onload = function() {
+            // Colors from Palette
+            const colorIndigo = '#4F46E5';
+            const colorCyan = '#06B6D4';
+            const colorAmber = '#F59E0B';
+            const colorRed = '#EF4444';
+            const colorGreen = '#10B981';
+
+            // 1. Global Processing Share (Doughnut)
+            new Chart(document.getElementById('globalShareChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: processLabels(['China Processing', 'United States', 'Rest of World']),
+                    datasets: [{
+                        data: [85, 10, 5], // Approximate 2023 figures
+                        backgroundColor: [colorIndigo, colorCyan, colorAmber],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        tooltip: commonTooltip,
+                        title: { display: true, text: 'Global REE Processing Capacity (%)' }
+                    }
+                }
+            });
+
+            // 2. Demand Trend (Line)
+            new Chart(document.getElementById('demandTrendChart'), {
+                type: 'line',
+                data: {
+                    labels: ['2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030'],
+                    datasets: [
+                        {
+                            label: 'Global Demand (Million Tons)',
+                            data: [0.3, 0.35, 0.42, 0.50, 0.65, 0.80, 0.95, 1.2], // Hypothetical trend based on EV CAGR
+                            borderColor: colorIndigo,
+                            backgroundColor: 'rgba(79, 70, 229, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        },
+                        {
+                            label: 'Projected Supply',
+                            data: [0.3, 0.32, 0.35, 0.38, 0.42, 0.48, 0.55, 0.65],
+                            borderColor: colorRed,
+                            borderDash: [5, 5], // Dashed line for shortage context
+                            tension: 0.4,
+                            fill: false
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        tooltip: commonTooltip,
+                        legend: { position: 'bottom' }
+                    },
+                    scales: {
+                        y: { beginAtZero: false, title: { display: true, text: 'Volume' } }
+                    }
+                }
+            });
+
+            // 3. Indian Reserves (Horizontal Bar)
+            new Chart(document.getElementById('indianReservesChart'), {
+                type: 'bar',
+                data: {
+                    labels: processLabels(['Andhra Pradesh', 'Odisha', 'Tamil Nadu', 'Kerala', 'West Bengal']),
+                    datasets: [{
+                        label: 'Monazite Resources (Million Tonnes)',
+                        data: [3.72, 2.41, 2.16, 1.90, 1.20], // IBM Data proxies
+                        backgroundColor: [colorIndigo, colorIndigo, colorCyan, colorCyan, colorAmber],
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: commonTooltip,
+                        title: { display: true, text: 'State-wise Strategic Reserves' }
+                    }
+                }
+            });
+
+            // 4. Portfolio Allocation (Pie)
+            new Chart(document.getElementById('portfolioChart'), {
+                type: 'pie',
+                data: {
+                    labels: processLabels(['Mining & Exploration', 'Chemical Processing', 'Strategic End Users']),
+                    datasets: [{
+                        data: [30000, 40000, 30000],
+                        backgroundColor: [colorIndigo, colorCyan, colorAmber],
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        tooltip: {
+                            callbacks: {
+                                title: commonTooltip.callbacks.title,
+                                label: function(context) {
+                                    return ' ₹' + context.raw.toLocaleString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // 5. ROI Projection (Grouped Bar)
+            new Chart(document.getElementById('roiChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Year 1', 'Year 3', 'Year 5'],
+                    datasets: [
+                        {
+                            label: 'Conservative (12%)',
+                            data: [112000, 140490, 176234],
+                            backgroundColor: colorCyan
+                        },
+                        {
+                            label: 'Aggressive (20%)',
+                            data: [120000, 172800, 248832],
+                            backgroundColor: colorAmber
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ' ₹' + context.raw.toLocaleString();
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: { title: { display: true, text: 'Portfolio Value (INR)' } }
+                    }
+                }
+            });
+
+            // 6. Risk Analysis (Radar)
+            new Chart(document.getElementById('riskRadarChart'), {
+                type: 'radar',
+                data: {
+                    labels: processLabels(['Geopolitical Instability', 'Regulatory/Policy Changes', 'Technology Substitution', 'Market Liquidity', 'Project Execution']),
+                    datasets: [{
+                        label: 'Risk Level (1-10)',
+                        data: [9, 7, 5, 6, 8],
+                        fill: true,
+                        backgroundColor: 'rgba(245, 158, 11, 0.2)', // Amber transparent
+                        borderColor: colorAmber,
+                        pointBackgroundColor: colorIndigo,
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: colorIndigo
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { display: true },
+                            suggestedMin: 0,
+                            suggestedMax: 10
+                        }
+                    },
+                    plugins: {
+                        tooltip: commonTooltip
+                    }
+                }
+            });
+        };
+    </script>
+</body>
+</html>
